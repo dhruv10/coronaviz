@@ -5,8 +5,12 @@ import earthNight from '../assets/earth-night.jpg';
 import nightSky from '../assets/night-sky.png';
 import worldMap from '../datasets/world.geojson';
 
+const d3 = require('d3-scale-chromatic');
+
 const tooltipInfo = (d, data) => {
-  const hoveredCountry = data.filter((i) => i.country.toLowerCase() === d.ADMIN.toLowerCase() || i.country.toLowerCase() === d.BRK_A3.toLowerCase())[0];
+  const hoveredCountry = data.filter((i) => i.country.toLowerCase() === d.ADMIN.toLowerCase() || i.country.toLowerCase() === d.BRK_A3.toLowerCase() || i.country === d.ABBREV.split('.').join("").toLowerCase())[0];
+
+  // console.log(i.country, d.ABBREV.split('.').join(""));
 
   if (!hoveredCountry) return (`
     <b>${d.ADMIN} (${d.ISO_A2}):</b> <br />
@@ -29,19 +33,12 @@ const tooltipInfo = (d, data) => {
 }
 
 const giveColor = (d, data) => {
-  const currentCountry = data.filter((i) => i.country.toLowerCase() === d.properties.ADMIN.toLowerCase() || i.country.toLowerCase() === d.properties.BRK_A3.toLowerCase())[0];
-  console.log(currentCountry);
+  const currentCountry = data.filter((i) => i.country.toLowerCase() === d.properties.ADMIN.toLowerCase() || i.country.toLowerCase() === d.properties.BRK_A3.toLowerCase() || i.country.toLowerCase() === d.properties.ABBREV.split('.').join("").toLowerCase())[0];
+  // console.log(currentCountry);
 
-  if (!currentCountry) return '#fff';
-  
-  if (currentCountry.cases <= 20) {
-    return '#52B2F5';
-  } if (currentCountry.cases <= 50) {
-    return '#7AF85B';
-  } if (currentCountry.cases <= 1000) {
-    return '#E1953E';
-  }
-  return '#E50538';
+  if (!currentCountry) return d3.interpolateYlOrRd(0);
+
+  else return d3.interpolateYlOrRd(currentCountry.cases * 0.001);
 }
 
 // country: "Iran"

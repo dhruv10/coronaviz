@@ -7,6 +7,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "bulma": "^0.8.0",
+    "d3-scale-chromatic": "^1.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-globe.gl": "^2.7.5",
