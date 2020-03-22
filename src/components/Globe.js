@@ -17,16 +17,14 @@ const tooltipInfo = (d, data) => {
     <b>${d.ADMIN} (${d.ISO_A2}):</b> <br />
     Population: <i>${d.POP_EST}</i>
     
-    <div class="tooltip>
-      <div class="tooltip-key">
-      <span class="tooltip-value"> Num of Cases: ${' ' + hoveredCountry.cases} </span>
+    <div className="tooltip>
+      <div className="tooltip-key">
+      <span className="tooltip-value"> Num of Cases: ${' ' + hoveredCountry.cases} </span>
       </div>
-      <div class="tooltip-key">
-      New Cases: <span class="tooltip-value"> ${' ' + hoveredCountry.todayCases} </span>
+      <div className="tooltip-key">
+      New Cases: <span className="tooltip-value"> ${' ' + hoveredCountry.todayCases} </span>
       </div>
     </div>
-    
-    ${console.log(hoveredCountry)}
   `)
 }
 
@@ -82,7 +80,7 @@ export default ({
 
       polygonsData={countries.features}
       polygonAltitude={d => d === hoverD ? 0.12 : 0.06}
-      polygonCapColor={d => d === hoverD ? giveColor(d, data) : '#fff'}
+      polygonCapColor={d => giveColor(d, data)}
       polygonSideColor={() => 'rgba(0, 100, 0, 0.15)'}
       polygonStrokeColor={() => '#111'}
       polygonLabel={({ properties: d }) => tooltipInfo(d, data)}

@@ -2,6 +2,18 @@
   /* text-align: center; */
 }
 
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 4rem;
+}
+
+.title {
+  font-family: 500;
+  margin-bottom: 0 !important;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,4 +26,10 @@
   background-color: green;
   z-index: 2;
   opacity: 0.5;
+}
+
+.scene-tooltip {
+  background-color: #000;
+  opacity: 0.75;
+  padding: 10px;
 }

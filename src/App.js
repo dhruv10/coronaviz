@@ -7,7 +7,8 @@ import Globe from './components/Globe';
 
 const App = () => {
 
-  const [ worldCoronaData, updateData ] = useState([]);
+  const [worldCoronaData, updateData] = useState([]);
+  const [isLoading, loadingStatus] = useState(true);
 
   useEffect(() => {
     fetch('https://corona.lmao.ninja/countries')
@@ -15,8 +16,13 @@ const App = () => {
       .then((data) => {
         console.log(data[0]);
         updateData(data);
+        loadingStatus(false);
       })
-  }, [ true ])
+
+
+  }, [true])
+
+  if (isLoading) return <p className="loader"></p>;
 
   return (
     <div className="App">
