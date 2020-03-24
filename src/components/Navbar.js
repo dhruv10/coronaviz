@@ -3,56 +3,25 @@ import React from 'react';
 const Navbar = () => {
   return (
     <React.Fragment>
-      <nav className='navbar' role='navigation' aria-label='main navigation'>
-        <div className='navbar-brand'>
-          <a className='navbar-item title' href='#'>
-            CORONAViz
-          </a>
-
-          <a
-            role='button'
-            className='navbar-burger burger'
-            aria-label='menu'
-            aria-expanded='false'
-            data-target='navbarBasicExample'
-          >
-            <span aria-hidden='true'></span>
-            <span aria-hidden='true'></span>
-            <span aria-hidden='true'></span>
-          </a>
+      <aside class="menu sidebar">
+        <div class="tabs">
+          <ul>
+            <li class="is-active"><a>Corona Viz</a></li>
+            <li class="is-active"></li>
+            <li class="is-active"></li>
+            <li class="is-active"></li>
+            {/* <li class="is-active"><a> 🌎</a></li> */}
+          </ul>
         </div>
-
-        <div id='navbarBasicExample' className='navbar-menu'>
-          <div className='navbar-start'>
-            <a className='navbar-item active'>Globe</a>
-
-            {/* <a className='navbar-item'>Documentation</a> */}
-
-            {/* <div className='navbar-item has-dropdown is-hoverable'>
-              <a className='navbar-link'>More</a>
-
-              <div className='navbar-dropdown'>
-                <a className='navbar-item'>About</a>
-                <a className='navbar-item'>Jobs</a>
-                <a className='navbar-item'>Contact</a>
-                <hr className='navbar-divider' />
-                <a className='navbar-item'>Report an issue</a>
-              </div>
-            </div> */}
-          </div>
-
-          <div className='navbar-end'>
-            <div className='navbar-item'>
-              <div className='buttons'>
-                {/* <a className='button is-primary'>
-                  <strong>Sign up</strong>
-                </a>
-                <a className='button is-light'>Log in</a> */}
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+        
+        <ul class="menu-list bottom">
+        <p class="menu-label" style={{ textTransform: 'none', width: '150px' }}>
+          Made with &hearts; by <span><a class="dhruv10" target="_blank" rel="noopener" href="https://github.com/dhruv10">dhruv10</a></span>
+        </p>
+          {/* <li><a class="is-active">Corona Viz</a></li>
+          <li><a>Corona Viz</a></li> */}
+        </ul>
+      </aside>
     </React.Fragment>
   );
 };

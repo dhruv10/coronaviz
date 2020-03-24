@@ -9,6 +9,16 @@
   font-size: 4rem;
 }
 
+.dhruv10:hover {
+  text-decoration: underline;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+}
+
 .title {
   font-family: 500;
   margin-bottom: 0 !important;
@@ -21,11 +31,12 @@
 
 .sidebar {
   height: 100%;
+  padding: 20px;
   width: 350px;
   position: absolute;
-  background-color: green;
+  background-color: white;
   z-index: 2;
-  opacity: 0.5;
+  /* opacity: 0.75; */
 }
 
 .scene-tooltip {
