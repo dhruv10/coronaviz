@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Globe from 'react-globe.gl';
+import '../App.css';
 
 import earthNight from '../assets/earth-night.jpg';
 import nightSky from '../assets/night-sky.png';
@@ -18,19 +19,43 @@ const tooltipInfo = (d, data) => {
   `);
 
   return (`
-    <b>${d.ADMIN} (${d.ISO_A2}):</b> <br />
-    Population: <i>${d.POP_EST}</i>
-    
-    <div className="tooltip>
-      <div className="tooltip-key">
-      <span className="tooltip-value"> Num of Cases: ${' ' + hoveredCountry.cases} </span>
+    <b>${d.ADMIN} - ${d.ISO_A2}</b> <br />
+    <br />
+    <span class="tooltip-key">Population:</span> <span class="tooltip-value">${parseFloat((d.POP_EST / 1000000).toFixed(2))} M</span>
+    <div>
+      <div class="tooltip-key">
+      Total number of cases:
+      <span class="tooltip-value"> ${' ' + hoveredCountry.cases}
+        (${hoveredCountry.todayCases + ' '} today)  </span>
       </div>
-      <div className="tooltip-key">
-      New Cases: <span className="tooltip-value"> ${' ' + hoveredCountry.todayCases} </span>
+
+      <div class="tooltip-key">
+      Total deaths:
+      <span class="tooltip-value"> ${' ' + hoveredCountry.deaths}
+        (${hoveredCountry.todayDeaths + ' '} today)  </span>
+      </div>
+
+      <div class="tooltip-key">
+      Active Cases:
+      <span class="tooltip-value"> ${' ' + hoveredCountry.active} </span>
+      </div>
+
+      <div class="tooltip-key">
+      Recovered Cases: 
+      <span class="tooltip-value"> ${' ' + hoveredCountry.recovered} </span>
       </div>
     </div>
   `)
 }
+
+// cases: 511,
+// todayCases: 12,
+// deaths: 10,
+// todayDeaths: 0,
+// recovered: 37,
+// active: 464,
+// critical: 0,
+// casesPerOneMillion: 0
 
 const giveColor = (d, data) => {
   const currentCountry = data.filter((i) => i.country.toLowerCase() === d.properties.ADMIN.toLowerCase() || i.country.toLowerCase() === d.properties.BRK_A3.toLowerCase() || i.country.toLowerCase() === d.properties.ABBREV.split('.').join("").toLowerCase())[0];
@@ -41,15 +66,11 @@ const giveColor = (d, data) => {
   else return d3.interpolateYlOrRd(currentCountry.cases * 0.001);
 }
 
-// country: "Iran"
-// cases: 20610
-// todayCases: 966
-// deaths: 1556
-// todayDeaths: 123
-// recovered: 7635
-// active: 11419
-// critical: 0
-// casesPerOneMillion: 245
+const clicked = (d, data) => {
+  const currentCountry = data.filter((i) => i.country.toLowerCase() === d.properties.ADMIN.toLowerCase() || i.country.toLowerCase() === d.properties.BRK_A3.toLowerCase() || i.country.toLowerCase() === d.properties.ABBREV.split('.').join("").toLowerCase())[0];
+  
+  console.log(d, currentCountry);
+}
 
 export default ({
   data
@@ -83,6 +104,8 @@ export default ({
       polygonLabel={({ properties: d }) => tooltipInfo(d, data)}
       onPolygonHover={setHoverD}
       polygonsTransitionDuration={300}
+
+      onPolygonClick={d => clicked(d, data)}
     />
   );
 };

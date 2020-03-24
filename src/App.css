@@ -32,4 +32,24 @@
   background-color: #000;
   opacity: 0.75;
   padding: 10px;
+  font-weight: 500 !important;
 }
+
+.tooltip-key {
+  font-weight: 500;
+  color: gray;
+}
+
+.tooltip-value {
+  font-weight: 500;
+  color: white;
+}
+
+/* position: absolute;
+    right: 0;
+    top: 0;
+    width: 350px;
+    height: 100vh;
+    background: transparent;
+    transition: margin-right 0.3s;
+    margin-right: -350px; */

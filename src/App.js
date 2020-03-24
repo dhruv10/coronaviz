@@ -14,15 +14,14 @@ const App = () => {
     fetch('https://corona.lmao.ninja/countries')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data[0]);
         updateData(data);
         loadingStatus(false);
       })
 
-      window.onresize = () => {
-        if (window.RT) clearTimeout(window.RT);
-        window.RT = setTimeout(() => window.location.reload(false), 100);
-      };
+      // window.onresize = () => {
+      //   if (window.RT) clearTimeout(window.RT);
+      //   window.RT = setTimeout(() => window.location.reload(false), 100);
+      // };
   
   }, [true])
 
