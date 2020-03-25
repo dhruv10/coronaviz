@@ -13,6 +13,21 @@
   text-decoration: underline;
 }
 
+.pb-20 {
+  padding: 20px 0;
+}
+
+.p-c-10>li {
+  padding: 5px 0;
+}
+
+.is-selected {
+  background-color: #E4E6F8;
+  color: #363636;
+  border-right: solid 5px #5352ED;
+  box-shadow: 0px 0.5px 50px rgba(2, 2, 2, 0.05);
+}
+
 .bottom {
   position: absolute;
   bottom: 0;
@@ -37,6 +52,8 @@
   background-color: white;
   z-index: 2;
   /* opacity: 0.75; */
+  transition: transform 1s;
+  /* transform: translateX(-350px); */
 }
 
 .scene-tooltip {

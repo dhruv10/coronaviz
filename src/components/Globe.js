@@ -81,12 +81,12 @@ export default ({
   const [hoverD, setHoverD] = useState();
 
   useEffect(() => {
-    // globeEl.current.controls().autoRotate = true;
-    // globeEl.current.controls().autoRotateSpeed = 0.1;
+    globeEl.current.controls().autoRotate = true;
+    globeEl.current.controls().autoRotateSpeed = 0.1;
     globeEl.current.pointOfView({ lat: 24, lng: 78, altitude: 2.4 });
 
     fetch(worldMap).then(res => res.json()).then(setCountries);
-  }, [true]);
+  }, []);
 
   return (
     <Globe

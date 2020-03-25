@@ -18,12 +18,12 @@ const App = () => {
         loadingStatus(false);
       })
 
-      // window.onresize = () => {
-      //   if (window.RT) clearTimeout(window.RT);
-      //   window.RT = setTimeout(() => window.location.reload(false), 100);
-      // };
+      window.onresize = () => {
+        if (window.RT) clearTimeout(window.RT);
+        window.RT = setTimeout(() => window.location.reload(false), 100);
+      };
   
-  }, [true])
+  }, [])
 
   if (isLoading) return <p className="loader"></p>;
 
