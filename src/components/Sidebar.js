@@ -145,6 +145,7 @@ const Sidebar = () => {
               )}
               {activeTabs[2] && (
                 <div>
+                  <img src="https://user-images.githubusercontent.com/32517802/77585577-b4173f80-6f0a-11ea-96e6-35e0b3b93e8a.png" alt="take precautions" />
                   You can protect yourself and help prevent spreading the virus
                   to others if you: <br />
                   <p className='menu-label' style={{ textTransform: 'none' }}>
