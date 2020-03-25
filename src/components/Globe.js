@@ -12,14 +12,17 @@ const tooltipInfo = (d, data) => {
   const hoveredCountry = data.filter((i) => i.country.toLowerCase() === d.ADMIN.toLowerCase() || i.country.toLowerCase() === d.BRK_A3.toLowerCase() || i.country === d.ABBREV.split('.').join("").toLowerCase())[0];
 
   // console.log(i.country, d.ABBREV.split('.').join(""));
+  let flagURL;
+
+  if (hoveredCountry && hoveredCountry.countryInfo && hoveredCountry.countryInfo.flag) flagURL = hoveredCountry.countryInfo.flag;
 
   if (!hoveredCountry) return (`
-    <b>${d.ADMIN} (${d.ISO_A2}):</b> <br />
+    <b>${d.ADMIN} (${d.ISO_A2}):</b> | <img src="${flagURL}" width="16px" />  <br />
     Population: <i>${d.POP_EST}</i>
   `);
 
   return (`
-    <b>${d.ADMIN} - ${d.ISO_A2}</b> <br />
+    <b>${d.ADMIN} - ${d.ISO_A2}</b> | <img src="${flagURL}" width="16px" /> <br />
     <br />
     <span class="tooltip-key">Population:</span> <span class="tooltip-value">${parseFloat((d.POP_EST / 1000000).toFixed(2))} M</span>
     <div>
@@ -68,7 +71,7 @@ const giveColor = (d, data) => {
 
 const clicked = (d, data) => {
   const currentCountry = data.filter((i) => i.country.toLowerCase() === d.properties.ADMIN.toLowerCase() || i.country.toLowerCase() === d.properties.BRK_A3.toLowerCase() || i.country.toLowerCase() === d.properties.ABBREV.split('.').join("").toLowerCase())[0];
-  
+
   console.log(d, currentCountry);
 }
 
