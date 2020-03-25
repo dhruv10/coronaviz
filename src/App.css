@@ -71,6 +71,25 @@
   color: gray;
 }
 
+.legend {
+  z-index: 1;
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+}
+
+.legend-text {
+  z-index: 1;
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+  color: white;
+  font-weight: 300;
+  display: flex;
+  width: 320px;
+  justify-content: space-between;
+}
+
 .tooltip-value {
   font-weight: 500;
   color: white;
