@@ -148,7 +148,8 @@
   width: 3rem;
   height: 3rem;
   outline: none;
-  z-index: 1;
+  z-index: 2;
+  box-shadow: 0px 0.5px 50px rgba(2, 2, 2, 0.05);
 }
 
 /* position: absolute;
@@ -159,3 +160,13 @@
     background: transparent;
     transition: margin-right 0.3s;
     margin-right: -350px; */
+
+@media only screen and (max-width: 600px) {
+  .sidebar-body {
+    overflow-y: scroll;
+    height: 80vh;
+  }
+  .scene-tooltip {
+    min-width: 300px;
+  }
+}
