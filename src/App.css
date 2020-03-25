@@ -17,6 +17,26 @@
   padding: 20px 0;
 }
 
+.card {
+  box-shadow: 0px 0.5px 50px rgba(2, 2, 2, 0.05) !important;
+  border-radius: 10px;
+}
+
+.card-header {
+  box-shadow: none !important;
+  background-color: #FEE8E7;
+}
+
+.br-rd-top {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.br-rd-btm {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
 .p-c-10>li {
   padding: 5px 0;
 }
@@ -26,6 +46,18 @@
   color: #363636;
   border-right: solid 5px #5352ED;
   box-shadow: 0px 0.5px 50px rgba(2, 2, 2, 0.05);
+}
+
+.card-header-title {
+  justify-content: space-around;
+}
+
+.is-selected-tab {
+  border-top: solid 2.5px #F14568;
+}
+
+.is-selected-tab-b {
+  border-bottom: solid #F14568 2.5px;
 }
 
 .bottom {
@@ -71,6 +103,19 @@
   color: gray;
 }
 
+.scrollable {
+  overflow-y: scroll;
+  height: 235px;
+}
+
+.line-height {
+  /* line-height: 27px; */
+}
+
+.pt-10 {
+  padding-top: 10px;
+}
+
 .legend {
   z-index: 1;
   position: absolute;
@@ -81,10 +126,10 @@
 .legend-text {
   z-index: 1;
   position: absolute;
-  bottom: 60px;
+  bottom: 35px;
   right: 20px;
   color: white;
-  font-weight: 300;
+  font-weight: 500;
   display: flex;
   width: 320px;
   justify-content: space-between;
