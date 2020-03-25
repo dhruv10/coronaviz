@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import { constants } from '../constants';
 import numberWithCommas from '../helper';
+import menu from '../assets/menu.svg';
 
-const Navbar = () => {
+const Sidebar = () => {
 
   useEffect(() => {
     fetch(constants.allData)
@@ -12,11 +13,15 @@ const Navbar = () => {
   }, []);
 
   const [worldStats, updateWorldStats] = useState({});
+  const [isSidebarOpen, changeSidebarStatus] = useState(true);
 
+  const toggleSideber = () => {
+    changeSidebarStatus(!isSidebarOpen);
+  }
 
   return (
     <React.Fragment>
-      <aside className="menu sidebar">
+      <aside className={isSidebarOpen ? 'menu sidebar' : 'menu sidebar open-sidebar'}>
         <div className="tabs">
           <ul>
             <li className="is-active"><a>Corona Viz</a></li>
@@ -50,8 +55,13 @@ const Navbar = () => {
           Made with &hearts; by <span><a className="dhruv10" target="_blank" rel="noopener noreferrer" href="https://github.com/dhruv10">dhruv10</a></span>
         </p>
       </aside>
+      <abbr title="Menu">
+        <button className="button menu-icon" onClick={() => toggleSideber()}>
+          <img src={menu} width="64px" style={{ transform: 'scale(1.5)' }} />
+        </button>
+      </abbr>
     </React.Fragment>
   );
 };
 
-export default Navbar;
+export default Sidebar;

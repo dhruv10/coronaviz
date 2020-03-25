@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import 'bulma/css/bulma.css';
 import './App.css';
 
-import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
 import Globe from './components/Globe';
 
 const App = () => {
@@ -18,18 +18,18 @@ const App = () => {
         loadingStatus(false);
       })
 
-      window.onresize = () => {
-        if (window.RT) clearTimeout(window.RT);
-        window.RT = setTimeout(() => window.location.reload(false), 100);
-      };
-  
+    // window.onresize = () => {
+    //   if (window.RT) clearTimeout(window.RT);
+    //   window.RT = setTimeout(() => window.location.reload(false), 100);
+    // };
+
   }, [])
 
   if (isLoading) return <p className="loader"></p>;
 
   return (
     <div className="App">
-      <Navbar />
+      <Sidebar />
       <section>
         <Globe data={worldCoronaData} />
       </section>
