@@ -32,4 +32,4 @@ API for Current cases and more stuff about COVID-19 or the Novel Coronavirus Str
 
 ## Globe Viz
 
-![alt Globe Viz](https://user-images.githubusercontent.com/32517802/77255320-82914080-6c8c-11ea-84df-ae0ef7d0c6e2.png)
+![alt Globe Viz](https://user-images.githubusercontent.com/32517802/77742114-f55b3c80-703b-11ea-840c-c77eb9c89175.png)
