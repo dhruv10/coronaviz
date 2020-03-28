@@ -261,6 +261,17 @@ const Sidebar = () => {
                 dhruv10
               </a>
             </span>
+            {' '}on{' '}
+            <span>
+              <a
+                className='dhruv10'
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://github.com/dhruv10/coronaviz'
+              >
+                GitHub
+              </a>
+            </span>
           </p>
         </div>
       </aside>
