@@ -141,7 +141,7 @@
 }
 
 .menu-icon {
-  position: fixed;
+  position: absolute;
   right: 20px;
   top: 20px;
   border-radius: 8rem;
