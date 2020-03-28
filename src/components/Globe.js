@@ -6,6 +6,7 @@ import earthNight from '../assets/earth-night.jpg';
 import nightSky from '../assets/night-sky.png';
 import worldMap from '../datasets/world.geojson';
 
+import numberWithCommas from '../helper';
 const d3 = require('d3-scale-chromatic');
 
 const tooltipInfo = (d, data) => {
@@ -32,7 +33,7 @@ const tooltipInfo = (d, data) => {
   if (!hoveredCountry)
     return `
     <b>${d.ADMIN} (${d.ISO_A2}):</b> | <img src="${flagURL}" width="16px" />  <br />
-    Population: <i>${d.POP_EST}</i>
+    Population: <i>${numberWithCommas(d.POP_EST)}</i>
   `;
 
   return `
@@ -40,32 +41,32 @@ const tooltipInfo = (d, data) => {
     d.ISO_A2
   }</b> | <img src="${flagURL}" width="16px" /> <br />
     <br />
-    <span class="tooltip-key">Population:</span> <span class="tooltip-value">${parseFloat(
+    <span class="tooltip-key">Population:</span> <span class="tooltip-value">${numberWithCommas(parseFloat(
       (d.POP_EST / 1000000).toFixed(2)
-    )} M (${((hoveredCountry.cases / d.POP_EST) * 100).toFixed(
+    ))} M (${((hoveredCountry.cases / d.POP_EST) * 100).toFixed(
     4
   )}% affected)</span>
     <div>
       <div class="tooltip-key">
       Total number of cases:
-      <span class="tooltip-value"> ${' ' + hoveredCountry.cases}
-        (${hoveredCountry.todayCases + ' '} today)  </span>
+      <span class="tooltip-value"> ${' ' + numberWithCommas(hoveredCountry.cases)}
+        (${numberWithCommas(hoveredCountry.todayCases) + ' '} today)  </span>
       </div>
 
       <div class="tooltip-key">
       Total deaths:
-      <span class="tooltip-value"> ${' ' + hoveredCountry.deaths}
-        (${hoveredCountry.todayDeaths + ' '} today)  </span>
+      <span class="tooltip-value"> ${' ' + numberWithCommas(hoveredCountry.deaths)}
+        (${numberWithCommas(hoveredCountry.todayDeaths) + ' '} today)  </span>
       </div>
 
       <div class="tooltip-key">
       Active Cases:
-      <span class="tooltip-value"> ${' ' + hoveredCountry.active} </span>
+      <span class="tooltip-value"> ${' ' + numberWithCommas(hoveredCountry.active)} </span>
       </div>
 
       <div class="tooltip-key">
       Recovered Cases: 
-      <span class="tooltip-value"> ${' ' + hoveredCountry.recovered} </span>
+      <span class="tooltip-value"> ${' ' + numberWithCommas(hoveredCountry.recovered)} </span>
       </div>
     </div>
   `;
