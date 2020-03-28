@@ -42,7 +42,9 @@ const tooltipInfo = (d, data) => {
     <br />
     <span class="tooltip-key">Population:</span> <span class="tooltip-value">${parseFloat(
       (d.POP_EST / 1000000).toFixed(2)
-    )} M (${ ((hoveredCountry.cases / d.POP_EST) * 100).toFixed(4) }% affected)</span>
+    )} M (${((hoveredCountry.cases / d.POP_EST) * 100).toFixed(
+    4
+  )}% affected)</span>
     <div>
       <div class="tooltip-key">
       Total number of cases:
@@ -115,14 +117,17 @@ export default ({ data }) => {
   const [hoverD, setHoverD] = useState();
 
   useEffect(() => {
-    globeEl.current.controls().autoRotate = true;
-    globeEl.current.controls().autoRotateSpeed = 0.1;
+    globeEl.current.controls().autoRotateSpeed = 0.05;
     globeEl.current.pointOfView({ lat: 24, lng: 78, altitude: 2.4 });
 
     fetch(worldMap)
       .then(res => res.json())
       .then(setCountries);
   }, []);
+
+  useEffect(() => {
+    globeEl.current.controls().autoRotate = hoverD ? false : true;
+  }, [hoverD]);
 
   return (
     <Globe
