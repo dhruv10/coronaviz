@@ -244,35 +244,34 @@ const Sidebar = () => {
                 Cure
               </p>
             </footer>
+            <p
+              className='menu-label pb-20'
+              style={{ textTransform: 'none', textAlign: 'center' }}
+            >
+              Developed by{' '}
+              <span>
+                <a
+                  className='dhruv10'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href='https://github.com/dhruv10'
+                >
+                  dhruv10
+                </a>
+              </span>{' '}
+              on{' '}
+              <span>
+                <a
+                  className='dhruv10'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href='https://github.com/dhruv10/coronaviz'
+                >
+                  GitHub
+                </a>
+              </span>
+            </p>
           </div>
-
-          <p
-            className='menu-label bottom pb-20'
-            style={{ textTransform: 'none', textAlign: 'center' }}
-          >
-            Developed by{' '}
-            <span>
-              <a
-                className='dhruv10'
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://github.com/dhruv10'
-              >
-                dhruv10
-              </a>
-            </span>
-            {' '}on{' '}
-            <span>
-              <a
-                className='dhruv10'
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://github.com/dhruv10/coronaviz'
-              >
-                GitHub
-              </a>
-            </span>
-          </p>
         </div>
       </aside>
       <abbr title='Menu'>
