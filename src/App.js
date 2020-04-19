@@ -12,7 +12,7 @@ const App = () => {
   const [isLoading, loadingStatus] = useState(true);
 
   useEffect(() => {
-    fetch('https://corona.lmao.ninja/countries')
+    fetch('https://corona.lmao.ninja/v2/countries?sort=country')
       .then((res) => res.json())
       .then((data) => {
         updateData(data);
