@@ -6,13 +6,15 @@ import Sidebar from './components/Sidebar';
 import Globe from './components/Globe';
 import numberWithCommas from './helper';
 
+import { constants } from './constants';
+
 const App = () => {
 
   const [worldCoronaData, updateData] = useState([]);
   const [isLoading, loadingStatus] = useState(true);
 
   useEffect(() => {
-    fetch('https://corona.lmao.ninja/v2/countries?sort=country')
+    fetch(constants.allCountries)
       .then((res) => res.json())
       .then((data) => {
         updateData(data);

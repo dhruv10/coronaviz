@@ -12,7 +12,7 @@ const Sidebar = () => {
   }, []);
 
   const [worldStats, updateWorldStats] = useState({});
-  const [isSidebarOpen, changeSidebarStatus] = useState(true);
+  const [isSidebarOpen, changeSidebarStatus] = useState(false);
   const [activeTabs, updatetabs] = useState([true, false, false, false]);
 
   const refOverviewTab = useRef(null);
