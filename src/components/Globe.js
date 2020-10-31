@@ -20,7 +20,6 @@ const tooltipInfo = (d, data) => {
           .toLowerCase()
   )[0];
 
-  // console.log(i.country, d.ABBREV.split('.').join(""));
   let flagURL;
 
   if (
@@ -72,15 +71,6 @@ const tooltipInfo = (d, data) => {
   `;
 };
 
-// cases: 511,
-// todayCases: 12,
-// deaths: 10,
-// todayDeaths: 0,
-// recovered: 37,
-// active: 464,
-// critical: 0,
-// casesPerOneMillion: 0
-
 const giveColor = (d, data) => {
   const currentCountry = data.filter(
     i =>
@@ -91,7 +81,6 @@ const giveColor = (d, data) => {
           .join('')
           .toLowerCase()
   )[0];
-  // console.log(currentCountry);
 
   if (!currentCountry) return d3.interpolateYlOrRd(0);
   else return d3.interpolateYlOrRd(currentCountry.cases * 0.001);
